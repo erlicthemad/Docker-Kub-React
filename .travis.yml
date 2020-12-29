@@ -8,15 +8,17 @@ before_install:
 
 script:
     - docker run -e CI=true naujocke/docker-react npm run test
-
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-2"
-  app: "docker-react"
-  env: "DockerReact-env"
-  bucket-name: "elasticbeanstalk-us-east-2-456447426329"
-  bucket-path: "docker-react"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+#
+# Disabled due to AWS services being dismantled
+#
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-east-2"
+#   app: "docker-react"
+#   env: "DockerReact-env"
+#   bucket-name: "elasticbeanstalk-us-east-2-456447426329"
+#   bucket-path: "docker-react"
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
